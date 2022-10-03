@@ -7,11 +7,7 @@ class CarrinhoLista extends StatelessWidget {
   Widget build(BuildContext context) {
     print('BUILD: CarrinhoLista');
 
-    var itemNameStyle = Theme.of(context).textTheme.titleLarge;
-    // This gets the current state of CartModel and also tells Flutter
-    // to rebuild this widget when CartModel notifies listeners (in other words,
-    // when it changes).
-    var carrinho = context.watch<CarrinhoModel>();
+    final carrinho = Provider.of<CarrinhoModel>(context);
 
     return ListView.builder(
       itemCount: carrinho.items.length,

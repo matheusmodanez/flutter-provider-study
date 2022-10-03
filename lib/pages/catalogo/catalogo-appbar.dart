@@ -8,7 +8,7 @@ class CatalogoAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     print('BUILD: CatalogoAppBar');
 
-    final carrinho = context.watch<CarrinhoModel>();
+    final carrinho = Provider.of<CarrinhoModel>(context);
     return AppBar(
       title: const Text('Catalogo'),
       actions: [
