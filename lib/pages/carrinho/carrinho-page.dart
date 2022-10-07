@@ -3,6 +3,10 @@ import 'package:cart_provider_demo/pages/carrinho/carrinho_total.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:provider/provider.dart';
+
+import '../../models/carrinho.dart';
+import '../../models/compras.dart';
 
 class CarrinhoPage extends StatelessWidget {
   const CarrinhoPage({Key? key}) : super(key: key);
@@ -10,6 +14,9 @@ class CarrinhoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     print('BUILD: CarrinhoPage');
+
+    final carrinho = Provider.of<CarrinhoModel>(context);
+    final itemsComprados = ItemsComprados(carrinho.items);
 
     return Scaffold(
       appBar: AppBar(
@@ -25,10 +32,14 @@ class CarrinhoPage extends StatelessWidget {
               ),
             ),
             const Divider(height: 4, color: Colors.black),
-            CarrinhoTotal()
+            CarrinhoTotal(
+              itemsComprados: itemsComprados,
+            )
           ],
         ),
       ),
     );
   }
 }
+
+class ItemComprados {}

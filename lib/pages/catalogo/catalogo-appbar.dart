@@ -23,6 +23,12 @@ class CatalogoAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
           ),
           onPressed: () => Navigator.pushNamed(context, '/carrinho'),
+        ),
+        IconButton(
+          icon: const Icon(
+            Icons.attach_money_outlined,
+          ),
+          onPressed: () => Navigator.pushNamed(context, '/compras'),
         )
       ],
     );

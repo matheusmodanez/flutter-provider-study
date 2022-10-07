@@ -17,6 +17,12 @@ class CarrinhoModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  void removeAll() {
+    _items.removeRange(0, _items.length);
+
+    notifyListeners();
+  }
+
   int get totalPrice =>
       _items.fold(0, (total, current) => total + current.preco);
 }
